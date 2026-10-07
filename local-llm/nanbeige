@@ -1,0 +1,15 @@
+#!/bin/bash
+# Nanbeige llama-server コントロールスクリプト
+# 使い方: nanbeige {on|off|status|restart|logs|clean|help}
+
+MAKEFILE="$(dirname "$0")/Makefile.nanbeige"
+
+case "${1:-help}" in
+  on|off|status|restart|logs|clean|help)
+    make -f "$MAKEFILE" "$1"
+    ;;
+  *)
+    echo "Usage: nanbeige {on|off|status|restart|logs|clean|help}"
+    exit 1
+    ;;
+esac

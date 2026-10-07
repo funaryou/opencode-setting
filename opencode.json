@@ -1,0 +1,629 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "zai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Z.AI",
+      "options": {
+        "baseURL": "https://api.z.ai/api/v1",
+        "apiKey": "{env:ZAI_API_KEY}"
+      },
+      "models": {
+        "glm-5-2": {
+          "name": "glm-5-2"
+        }
+      }
+    },
+    "cloudflare_workers_ai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Cloudflare Workers AI",
+      "options": {
+        "baseURL": "{env:CLOUDFLARE_WORKERS_AI_BASE_URL}",
+        "apiKey": "{env:CLOUDFLARE_WORKERS_AI_API_KEY}"
+      },
+      "models": {
+        "glm-5-2": {
+          "name": "@cf/zai-org/glm-5.2"
+        }
+      }
+    },
+    "nvidia": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY}"
+      },
+      "models": {
+        "nemotron-3-super": {
+          "name": "nvidia/nemotron-3-super-120b-a12b"
+        },
+        "deepseek-v4-flash": {
+          "name": "deepseek-ai/deepseek-v4-flash"
+        },
+        "deepseek-v4-pro": {
+          "name": "deepseek-ai/deepseek-v4-pro"
+        },
+        "glm-5-1": {
+          "name": "z-ai/glm-5-1"
+        },
+        "glm-4-7": {
+          "name": "z-ai/glm-4-7"
+        },
+        "qwen3-5-122b": {
+          "name": "qwen/qwen3.5-122b-a10b"
+        },
+        "qwen3-5-397b": {
+          "name": "qwen/qwen3.5-397b-a17b"
+        },
+        "gemma-4-31b": {
+          "name": "google/gemma-4-31b-it"
+        },
+        "mistral-small-4": {
+          "name": "mistralai/mistral-small-4-119b-2603"
+        },
+        "llama-nemotron-rerank": {
+          "name": "nvidia/llama-nemotron-rerank-1b-v2"
+        },
+        "minimax-m2": {
+          "name": "minimaxai/minimax-m2.7"
+        },
+        "kimi-k2": {
+          "name": "moonshotai/kimi-k2.6"
+        },
+        "devstral": {
+          "name": "devstral/devstral-2-123b-instruct-2512"
+        },
+        "mistral-large": {
+          "name": "mistralai/mistral-large-3-675b-instruct-2512"
+        },
+        "ministral": {
+          "name": "mistralai/ministral-14b-instruct-2512"
+        },
+        "nemotron-nano": {
+          "name": "nvidia/nemotron-nano-12b-v2-vl"
+        },
+        "01-ai-yi-large": {
+          "name": "01-ai/yi-large"
+        },
+        "abacusai-dracarys-llama-3-1-70b-instruct": {
+          "name": "abacusai/dracarys-llama-3.1-70b-instruct"
+        },
+        "adept-fuyu-8b": {
+          "name": "adept/fuyu-8b"
+        },
+        "ai21labs-jamba-1-5-large-instruct": {
+          "name": "ai21labs/jamba-1.5-large-instruct"
+        },
+        "aisingapore-sea-lion-7b-instruct": {
+          "name": "aisingapore/sea-lion-7b-instruct"
+        },
+        "baai-bge-m3": {
+          "name": "baai/bge-m3"
+        },
+        "bigcode-starcoder2-15b": {
+          "name": "bigcode/starcoder2-15b"
+        },
+        "bytedance-seed-oss-36b-instruct": {
+          "name": "bytedance/seed-oss-36b-instruct"
+        },
+        "databricks-dbrx-instruct": {
+          "name": "databricks/dbrx-instruct"
+        },
+        "deepseek-ai-deepseek-coder-6-7b-instruct": {
+          "name": "deepseek-ai/deepseek-coder-6.7b-instruct"
+        },
+        "google-codegemma-1-1-7b": {
+          "name": "google/codegemma-1.1-7b"
+        },
+        "google-codegemma-7b": {
+          "name": "google/codegemma-7b"
+        },
+        "google-deplot": {
+          "name": "google/deplot"
+        },
+        "google-diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it"
+        },
+        "google-gemma-2-2b-it": {
+          "name": "google/gemma-2-2b-it"
+        },
+        "google-gemma-2b": {
+          "name": "google/gemma-2b"
+        },
+        "google-gemma-3-12b-it": {
+          "name": "google/gemma-3-12b-it"
+        },
+        "google-gemma-3-4b-it": {
+          "name": "google/gemma-3-4b-it"
+        },
+        "google-gemma-3n-e2b-it": {
+          "name": "google/gemma-3n-e2b-it"
+        },
+        "google-gemma-3n-e4b-it": {
+          "name": "google/gemma-3n-e4b-it"
+        },
+        "google-recurrentgemma-2b": {
+          "name": "google/recurrentgemma-2b"
+        },
+        "ibm-granite-3-0-3b-a800m-instruct": {
+          "name": "ibm/granite-3.0-3b-a800m-instruct"
+        },
+        "ibm-granite-3-0-8b-instruct": {
+          "name": "ibm/granite-3.0-8b-instruct"
+        },
+        "ibm-granite-34b-code-instruct": {
+          "name": "ibm/granite-34b-code-instruct"
+        },
+        "ibm-granite-8b-code-instruct": {
+          "name": "ibm/granite-8b-code-instruct"
+        },
+        "meta-codellama-70b": {
+          "name": "meta/codellama-70b"
+        },
+        "meta-llama-3-1-70b-instruct": {
+          "name": "meta/llama-3.1-70b-instruct"
+        },
+        "meta-llama-3-1-8b-instruct": {
+          "name": "meta/llama-3.1-8b-instruct"
+        },
+        "meta-llama-3-2-11b-vision-instruct": {
+          "name": "meta/llama-3.2-11b-vision-instruct"
+        },
+        "meta-llama-3-2-1b-instruct": {
+          "name": "meta/llama-3.2-1b-instruct"
+        },
+        "meta-llama-3-2-3b-instruct": {
+          "name": "meta/llama-3.2-3b-instruct"
+        },
+        "meta-llama-3-2-90b-vision-instruct": {
+          "name": "meta/llama-3.2-90b-vision-instruct"
+        },
+        "meta-llama-3-3-70b-instruct": {
+          "name": "meta/llama-3.3-70b-instruct"
+        },
+        "meta-llama-4-maverick-17b-128e-instruct": {
+          "name": "meta/llama-4-maverick-17b-128e-instruct"
+        },
+        "meta-llama-guard-4-12b": {
+          "name": "meta/llama-guard-4-12b"
+        },
+        "meta-llama2-70b": {
+          "name": "meta/llama2-70b"
+        },
+        "microsoft-kosmos-2": {
+          "name": "microsoft/kosmos-2"
+        },
+        "microsoft-phi-3-vision-128k-instruct": {
+          "name": "microsoft/phi-3-vision-128k-instruct"
+        },
+        "microsoft-phi-3-5-moe-instruct": {
+          "name": "microsoft/phi-3.5-moe-instruct"
+        },
+        "microsoft-phi-4-mini-instruct": {
+          "name": "microsoft/phi-4-mini-instruct"
+        },
+        "microsoft-phi-4-multimodal-instruct": {
+          "name": "microsoft/phi-4-multimodal-instruct"
+        },
+        "minimaxai-minimax-m3": {
+          "name": "minimaxai/minimax-m3"
+        },
+        "mistralai-codestral-22b-instruct-v0-1": {
+          "name": "mistralai/codestral-22b-instruct-v0.1"
+        },
+        "mistralai-mistral-7b-instruct-v0-3": {
+          "name": "mistralai/mistral-7b-instruct-v0.3"
+        },
+        "mistralai-mistral-large": {
+          "name": "mistralai/mistral-large"
+        },
+        "mistralai-mistral-large-2-instruct": {
+          "name": "mistralai/mistral-large-2-instruct"
+        },
+        "mistralai-mistral-medium-3-5-128b": {
+          "name": "mistralai/mistral-medium-3.5-128b"
+        },
+        "mistralai-mistral-nemotron": {
+          "name": "mistralai/mistral-nemotron"
+        },
+        "mistralai-mixtral-8x22b-v0-1": {
+          "name": "mistralai/mixtral-8x22b-v0.1"
+        },
+        "mistralai-mixtral-8x7b-instruct-v0-1": {
+          "name": "mistralai/mixtral-8x7b-instruct-v0.1"
+        },
+        "nv-mistralai-mistral-nemo-12b-instruct": {
+          "name": "nv-mistralai/mistral-nemo-12b-instruct"
+        },
+        "nvidia-ai-synthetic-video-detector": {
+          "name": "nvidia/ai-synthetic-video-detector"
+        },
+        "nvidia-cosmos-reason2-8b": {
+          "name": "nvidia/cosmos-reason2-8b"
+        },
+        "nvidia-embed-qa-4": {
+          "name": "nvidia/embed-qa-4"
+        },
+        "nvidia-gliner-pii": {
+          "name": "nvidia/gliner-pii"
+        },
+        "nvidia-ising-calibration-1-35b-a3b": {
+          "name": "nvidia/ising-calibration-1-35b-a3b"
+        },
+        "nvidia-llama-3-1-nemoguard-8b-content-safety": {
+          "name": "nvidia/llama-3.1-nemoguard-8b-content-safety"
+        },
+        "nvidia-llama-3-1-nemoguard-8b-topic-control": {
+          "name": "nvidia/llama-3.1-nemoguard-8b-topic-control"
+        },
+        "nvidia-llama-3-1-nemotron-51b-instruct": {
+          "name": "nvidia/llama-3.1-nemotron-51b-instruct"
+        },
+        "nvidia-llama-3-1-nemotron-70b-instruct": {
+          "name": "nvidia/llama-3.1-nemotron-70b-instruct"
+        },
+        "nvidia-llama-3-1-nemotron-nano-8b-v1": {
+          "name": "nvidia/llama-3.1-nemotron-nano-8b-v1"
+        },
+        "nvidia-llama-3-1-nemotron-nano-vl-8b-v1": {
+          "name": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1"
+        },
+        "nvidia-llama-3-1-nemotron-safety-guard-8b-v3": {
+          "name": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3"
+        },
+        "nvidia-llama-3-1-nemotron-ultra-253b-v1": {
+          "name": "nvidia/llama-3.1-nemotron-ultra-253b-v1"
+        },
+        "nvidia-llama-3-2-nemoretriever-1b-vlm-embed-v1": {
+          "name": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1"
+        },
+        "nvidia-llama-3-2-nv-embedqa-1b-v1": {
+          "name": "nvidia/llama-3.2-nv-embedqa-1b-v1"
+        },
+        "nvidia-llama-3-3-nemotron-super-49b-v1": {
+          "name": "nvidia/llama-3.3-nemotron-super-49b-v1"
+        },
+        "nvidia-llama-3-3-nemotron-super-49b-v1-5": {
+          "name": "nvidia/llama-3.3-nemotron-super-49b-v1.5"
+        },
+        "nvidia-llama-nemotron-embed-1b-v2": {
+          "name": "nvidia/llama-nemotron-embed-1b-v2"
+        },
+        "nvidia-llama-nemotron-embed-vl-1b-v2": {
+          "name": "nvidia/llama-nemotron-embed-vl-1b-v2"
+        },
+        "nvidia-llama3-chatqa-1-5-70b": {
+          "name": "nvidia/llama3-chatqa-1.5-70b"
+        },
+        "nvidia-mistral-nemo-minitron-8b-8k-instruct": {
+          "name": "nvidia/mistral-nemo-minitron-8b-8k-instruct"
+        },
+        "nvidia-nemoretriever-parse": {
+          "name": "nvidia/nemoretriever-parse"
+        },
+        "nvidia-nemotron-3-content-safety": {
+          "name": "nvidia/nemotron-3-content-safety"
+        },
+        "nvidia-nemotron-3-nano-30b-a3b": {
+          "name": "nvidia/nemotron-3-nano-30b-a3b"
+        },
+        "nvidia-nemotron-3-nano-omni-30b-a3b-reasoning": {
+          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+        },
+        "nvidia-nemotron-3-ultra-550b-a55b": {
+          "name": "nvidia/nemotron-3-ultra-550b-a55b"
+        },
+        "nvidia-nemotron-3-5-content-safety": {
+          "name": "nvidia/nemotron-3.5-content-safety"
+        },
+        "nvidia-nemotron-4-340b-instruct": {
+          "name": "nvidia/nemotron-4-340b-instruct"
+        },
+        "nvidia-nemotron-4-340b-reward": {
+          "name": "nvidia/nemotron-4-340b-reward"
+        },
+        "nvidia-nemotron-content-safety-reasoning-4b": {
+          "name": "nvidia/nemotron-content-safety-reasoning-4b"
+        },
+        "nvidia-nemotron-mini-4b-instruct": {
+          "name": "nvidia/nemotron-mini-4b-instruct"
+        },
+        "nvidia-nemotron-nano-3-30b-a3b": {
+          "name": "nvidia/nemotron-nano-3-30b-a3b"
+        },
+        "nvidia-nemotron-parse": {
+          "name": "nvidia/nemotron-parse"
+        },
+        "nvidia-neva-22b": {
+          "name": "nvidia/neva-22b"
+        },
+        "nvidia-nv-embed-v1": {
+          "name": "nvidia/nv-embed-v1"
+        },
+        "nvidia-nv-embedcode-7b-v1": {
+          "name": "nvidia/nv-embedcode-7b-v1"
+        },
+        "nvidia-nv-embedqa-e5-v5": {
+          "name": "nvidia/nv-embedqa-e5-v5"
+        },
+        "nvidia-nv-embedqa-mistral-7b-v2": {
+          "name": "nvidia/nv-embedqa-mistral-7b-v2"
+        },
+        "nvidia-nvclip": {
+          "name": "nvidia/nvclip"
+        },
+        "nvidia-nvidia-nemotron-nano-9b-v2": {
+          "name": "nvidia/nvidia-nemotron-nano-9b-v2"
+        },
+        "nvidia-riva-translate-4b-instruct": {
+          "name": "nvidia/riva-translate-4b-instruct"
+        },
+        "nvidia-riva-translate-4b-instruct-v1-1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1"
+        },
+        "nvidia-vila": {
+          "name": "nvidia/vila"
+        },
+        "openai-gpt-oss-120b": {
+          "name": "openai/gpt-oss-120b"
+        },
+        "openai-gpt-oss-20b": {
+          "name": "openai/gpt-oss-20b"
+        },
+        "qwen-qwen3-next-80b-a3b-instruct": {
+          "name": "qwen/qwen3-next-80b-a3b-instruct"
+        },
+        "sarvamai-sarvam-m": {
+          "name": "sarvamai/sarvam-m"
+        },
+        "snowflake-arctic-embed-l": {
+          "name": "snowflake/arctic-embed-l"
+        },
+        "stepfun-ai-step-3-5-flash": {
+          "name": "stepfun-ai/step-3.5-flash"
+        },
+        "stepfun-ai-step-3-7-flash": {
+          "name": "stepfun-ai/step-3.7-flash"
+        },
+        "stockmark-stockmark-2-100b-instruct": {
+          "name": "stockmark/stockmark-2-100b-instruct"
+        },
+        "upstage-solar-10-7b-instruct": {
+          "name": "upstage/solar-10.7b-instruct"
+        },
+        "writer-palmyra-creative-122b": {
+          "name": "writer/palmyra-creative-122b"
+        },
+        "writer-palmyra-fin-70b-32k": {
+          "name": "writer/palmyra-fin-70b-32k"
+        },
+        "writer-palmyra-med-70b": {
+          "name": "writer/palmyra-med-70b"
+        },
+        "writer-palmyra-med-70b-32k": {
+          "name": "writer/palmyra-med-70b-32k"
+        },
+        "glm-5-2": {
+          "name": "z-ai/glm-5.2"
+        },
+        "zyphra-zamba2-7b-instruct": {
+          "name": "zyphra/zamba2-7b-instruct"
+        }
+      }
+    },
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenRouter",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1",
+        "apiKey": "{env:OPENROUTER_API_KEY}"
+      },
+      "models": {
+        "free-router": {
+          "name": "openrouter/free"
+        },
+        "llama-3.2-3b-free": {
+          "name": "meta-llama/llama-3.2-3b-instruct:free"
+        },
+        "qwen3-coder-free": {
+          "name": "qwen/qwen3-coder:free"
+        },
+        "qwen36-plus-preview-free": {
+          "name": "qwen/qwen3.6-plus-preview:free"
+        },
+        "gemini-2.5-flash-free": {
+          "name": "google/gemini-2.5-flash:free"
+        }
+      }
+    },
+    "groq": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Groq",
+      "options": {
+        "baseURL": "https://api.groq.com/openai/v1",
+        "apiKey": "{env:GROQ_API_KEY}"
+      },
+      "models": {
+        "llama-3.3-70b": {
+          "name": "llama-3.3-70b-versatile"
+        },
+        "llama-3.1-8b": {
+          "name": "llama-3.1-8b-instant"
+        },
+        "mixtral-8x7b": {
+          "name": "mixtral-8x7b-32768"
+        }
+      }
+    },
+    "zyloo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Zyloo",
+      "options": {
+        "baseURL": "https://api.zyloo.io/v1",
+        "apiKey": "{env:ZYLOO_API_KEY}"
+      },
+      "models": {
+        "zyloo/claude-opus-4-7": {
+          "name": "Claude Opus 4.7"
+        }
+      }
+    },
+    "google": {
+      "npm": "@ai-sdk/google",
+      "name": "Google AI Studio",
+      "options": {
+        "apiKey": "{env:GOOGLE_API_KEY}",
+        "baseURL": "https://generativelanguage.googleapis.com/v1beta"
+      },
+      "models": {
+        "gemini-2.5-flash": {
+          "name": "gemini-2.5-flash",
+          "reasoning": false
+        },
+        "gemini-2.5-pro": {
+          "name": "gemini-2.5-pro-exp-03-25",
+          "reasoning": false
+        },
+        "gemini-2.0-flash": {
+          "name": "gemini-2.0-flash",
+          "reasoning": false
+        },
+        "gemini-2.0-flash-lite": {
+          "name": "gemini-2.0-flash-lite-preview-02-05",
+          "reasoning": false
+        },
+        "gemini-1.5-flash": {
+          "name": "gemini-1.5-flash",
+          "reasoning": false
+        },
+        "gemini-1.5-pro": {
+          "name": "gemini-1.5-pro",
+          "reasoning": false
+        },
+        "gemini-flash-latest": {
+          "name": "gemini-flash-latest",
+          "reasoning": false
+        }
+      }
+    },
+    "localLLM": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local LLM",
+      "options": {
+        "baseURL": "http://127.0.0.1:8585/v1"
+      },
+      "models": {
+        "pavantippannagari/Ornith-1.0-9B-mlx-4Bit": {
+          "name": "Ornith 1.0 9B (Local MLX)",
+          "tools": true
+        }
+      }
+    },
+    "nanbeige-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Nanbeige Local",
+      "options": {
+        "baseURL": "http://127.0.0.1:6060/v1"
+      },
+      "models": {
+        "nanbeige4.2-3b": {
+          "name": "Nanbeige4.2-3B Q4_K_M",
+          "tools": false
+        }
+      }
+    }
+  },
+  "agent": {
+    "build": {
+      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
+    },
+    "plan": {
+      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
+    },
+    "review": {
+      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
+    },
+    "debug": {
+      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
+    },
+    "docs": {
+      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
+    }
+  },
+  "mcp": {
+    "gmail": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@gongrzhe/server-gmail-autoauth-mcp"
+      ],
+      "enabled": true
+    },
+    "notebooklm": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@m4ykeldev/notebooklm-mcp",
+        "serve"
+      ],
+      "env": {
+        "HEADLESS": "false"
+      },
+      "enabled": true
+    },
+    "pdf": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@jztan/pdf-mcp"
+      ],
+      "enabled": true
+    },
+    "github": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_MCP_TOKEN}"
+      }
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "stitch": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@_davideast/stitch-mcp",
+        "proxy"
+      ],
+      "environment": {
+        "STITCH_API_KEY": "{env:STITCH_API_KEY}"
+      }
+    },
+    "pencil": {
+      "command": [
+        "/Users/fur-dev/.pencil/mcp/antigravity_ide/out/mcp-server-darwin-arm64",
+        "--app",
+        "antigravity_ide",
+        "--agent",
+        "openCodeCLI"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.PHONY: on off status restart logs clean
+
+SERVER_LOG = $(HOME)/nanbeige-server.log
+LAUNCHD_PLIST = $(HOME)/Library/LaunchAgents/com.nanbeige.llamaserver.plist
+
+# ──────────────────────────────────────────────
+# Nanbeige llama-server コントロール
+# ──────────────────────────────────────────────
+
+on:   ## サーバーを起動する（launchd）
+	launchctl load $(LAUNCHD_PLIST)
+	@sleep 2
+	@if curl -s --max-time 3 http://localhost:6060/v1/models > /dev/null 2>&1; then \
+		echo "✅ Nanbeige server: ON"; \
+	else \
+		echo "⚠️ 起動中... 数秒後にもう一度 status 確認してください"; \
+	fi
+
+off:  ## サーバーを停止する（launchd）
+	launchctl unload $(LAUNCHD_PLIST) 2>/dev/null || true
+	sleep 1
+	pkill -f "nanbeige-llama" 2>/dev/null || true
+	@echo "🛑 Nanbeige server: OFF"
+
+status: ## サーバーの状態を確認する
+	@if curl -s --max-time 3 http://localhost:6060/v1/models > /dev/null 2>&1; then \
+		echo "🔵 Nanbeige server: RUNNING (port 6060)"; \
+		curl -s http://localhost:6060/v1/models 2>/dev/null | python3 -c \
+			"import json,sys; d=json.load(sys.stdin); m=d['data'][0]['meta']; \
+			print(f'  モデル: Nanbeige4.2-3B Q4_K_M'); \
+			print(f'  コンテキスト: {m[\"n_ctx\"]} tokens'); \
+			print(f'  パラメータ: {m[\"n_params\"]/1e9:.1f}B')" 2>/dev/null || true; \
+	else \
+		echo "🔴 Nanbeige server: STOPPED"; \
+		exit 0; \
+	fi
+
+restart: ## サーバーを再起動する
+	launchctl unload $(LAUNCHD_PLIST) 2>/dev/null || true
+	pkill -f "nanbeige-llama" 2>/dev/null || true
+	@sleep 2
+	launchctl load $(LAUNCHD_PLIST)
+	@sleep 2
+	@echo "🔄 Nanbeige server: RESTARTED"
+	@curl -s --max-time 3 http://localhost:6060/v1/models > /dev/null 2>&1 && \
+		echo "✅ 応答確認OK" || echo "⚠️ 起動中..."
+
+logs:   ## サーバーのログを表示する
+	tail -f $(SERVER_LOG)
+
+clean:  ## ログファイルを削除する
+	rm -f $(SERVER_LOG)
+	@echo "🧹 ログ削除完了"
+
+help:   ## ヘルプを表示する
+	@echo "使い方: make -f Makefile.nanbeige <target>"
+	@echo ""
+	@echo "ターゲット一覧:"
+	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | \
+		awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
+	@echo ""
+	@echo "例:"
+	@echo "  make -f Makefile.nanbeige on      # 起動"
+	@echo "  make -f Makefile.nanbeige off     # 停止"
+	@echo "  make -f Makefile.nanbeige status  # 状態確認"
