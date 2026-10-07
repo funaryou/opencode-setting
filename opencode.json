@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md", "answer-format.md"],
   "provider": {
     "zai": {
       "npm": "@ai-sdk/openai-compatible",
@@ -532,23 +533,6 @@
           "tools": false
         }
       }
-    }
-  },
-  "agent": {
-    "build": {
-      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
-    },
-    "plan": {
-      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
-    },
-    "review": {
-      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
-    },
-    "debug": {
-      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
-    },
-    "docs": {
-      "prompt": "You are a helpful coding assistant. Always respond in Japanese."
     }
   },
   "mcp": {
