@@ -11,6 +11,7 @@ permission:
     "*": ask
     "pwd *": allow
     "ls *": allow
+    "echo *": allow
     "cat *": allow
     "head *": allow
     "tail *": allow
