@@ -15,6 +15,7 @@ permission:
     "cat *": allow
     "head *": allow
     "tail *": allow
+    "wc *": allow
     "find *": allow
     "grep *": allow
     "rg *": allow
