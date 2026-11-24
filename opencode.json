@@ -629,5 +629,8 @@
       "enabled": true,
       "type": "local"
     }
-  }
+  },
+  "plugins": [
+    "@dietrichgebert/ponytail"
+  ]
 }

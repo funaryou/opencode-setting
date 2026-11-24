@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "mercury",
+    "mode": "dark"
+  },
+  "keybinds": {
+    "input.submit": "return",
+    "input.newline": "shift+return,ctrl+return,alt+return,ctrl+j"
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "hide"
+  },
+  "animations": false,
+  "leader": {
+    "timeout": 2750
+  },
+  "prompt": {
+    "image_preview": false
+  }
+}
